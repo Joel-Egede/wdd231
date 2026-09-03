@@ -1,0 +1,261 @@
+/* =========================
+   General Styles
+   ========================= */
+
+:root {
+    --primary-color: #17324d;
+    --secondary-color: #2f6690;
+    --accent-color: #f4b942;
+    --light-color: #f4f7f9;
+    --dark-color: #17202a;
+    --white-color: #ffffff;
+    --border-color: #c9d2d9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.site-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.site-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    flex: 1;
+}
+
+#menu-button {
+    background: transparent;
+    border: none;
+    color: var(--white-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+/* =========================
+   Navigation
+   ========================= */
+
+nav {
+    display: none;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a {
+    display: block;
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--secondary-color);
+}
+
+nav a.active {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+/* =========================
+   Main Content
+   ========================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+section {
+    background-color: var(--white-color);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* =========================
+   Profile Image
+   ========================= */
+
+section img {
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* =========================
+   Course Filters
+   ========================= */
+
+.course-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.course-filters button {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.course-filters button:hover,
+.course-filters button:focus {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.credits {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   Course Cards
+   ========================= */
+
+#course-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.course-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.course-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.course-card p {
+    margin: 0.35rem 0;
+}
+
+.course-card.completed {
+    background-color: #dcefe3;
+    border: 2px solid #3a7d44;
+}
+
+.completion-status {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.course-card.completed h3 {
+    color: #24552d;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: var(--accent-color);
+}
+
+footer p {
+    margin: 0.5rem 0;
+}

@@ -1,0 +1,141 @@
+/* =========================
+   Large Screen Layout
+   ========================= */
+
+@media screen and (min-width: 700px) {
+
+    /* =========================
+       Header
+       ========================= */
+
+    .site-header {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    /* =========================
+       Navigation
+       ========================= */
+
+    nav {
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav ul {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        border-top: none;
+    }
+
+    nav a {
+        padding: 1rem 1.5rem;
+        transition: background-color 0.2s ease;
+    }
+
+    /* =========================
+       Main Content
+       ========================= */
+
+    main {
+        padding: 2rem;
+    }
+
+    main > h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    main > section:first-of-type {
+        grid-area: about;
+    }
+
+    main > section:nth-of-type(2) {
+        grid-area: photo;
+    }
+
+    main > section:nth-of-type(3) {
+        grid-area: courses;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "heading heading"
+            "about photo"
+            "courses courses";
+        gap: 1.5rem;
+    }
+
+    main > h1 {
+        grid-area: heading;
+    }
+
+    section {
+        margin-bottom: 0;
+        padding: 1.5rem;
+    }
+
+    /* =========================
+       Course Filters
+       ========================= */
+
+    .course-filters {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .course-filters button {
+        min-width: 130px;
+    }
+
+    /* =========================
+       Course Cards
+       ========================= */
+
+    #course-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .course-card {
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+        padding: 2rem;
+    }
+}
+
+/* =========================
+   Extra Large Screens
+   ========================= */
+
+@media screen and (min-width: 1000px) {
+
+    #course-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .site-name {
+        font-size: 1.5rem;
+    }
+}
