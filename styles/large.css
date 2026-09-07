@@ -18,6 +18,7 @@
         display: none;
     }
 
+
     /* =========================
        Navigation
        ========================= */
@@ -43,16 +44,28 @@
         transition: background-color 0.2s ease;
     }
 
+
     /* =========================
        Main Content
        ========================= */
 
     main {
         padding: 2rem;
+        display: grid;
+
+        grid-template-columns: 2fr 1fr;
+
+        grid-template-areas:
+            "heading heading"
+            "about photo"
+            "courses courses";
+
+        gap: 1.5rem;
     }
 
     main > h1 {
-        margin-bottom: 1.5rem;
+        grid-area: heading;
+        margin-bottom: 0;
     }
 
     main > section:first-of-type {
@@ -67,24 +80,11 @@
         grid-area: courses;
     }
 
-    main {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas:
-            "heading heading"
-            "about photo"
-            "courses courses";
-        gap: 1.5rem;
-    }
-
-    main > h1 {
-        grid-area: heading;
-    }
-
     section {
         margin-bottom: 0;
         padding: 1.5rem;
     }
+
 
     /* =========================
        Course Filters
@@ -99,6 +99,7 @@
     .course-filters button {
         min-width: 130px;
     }
+
 
     /* =========================
        Course Cards
@@ -116,6 +117,7 @@
         justify-content: center;
     }
 
+
     /* =========================
        Footer
        ========================= */
@@ -124,6 +126,7 @@
         padding: 2rem;
     }
 }
+
 
 /* =========================
    Extra Large Screens

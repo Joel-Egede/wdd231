@@ -9,95 +9,171 @@
 
     <title>WDD 231 | Web Frontend Development I | Iloabuchi Egede</title>
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
 
+    <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/courses.js" defer></script>
 </head>
 
 <body>
+
     <header>
         <div class="site-header">
+
             <a href="index.html" class="site-logo">
-                <img src="images/logo.svg" alt="Iloabuchi Egede logo">
+                <img src="images/logo.svg" alt="Joel Egede logo">
             </a>
 
             <span class="site-name">Iloabuchi Egede</span>
 
-            <button id="menu-button" type="button" aria-label="Open navigation menu">
+            <button id="menu-button"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
                 ☰
             </button>
-        
 
-            <nav id="navigation">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#">Chamber</a></li>
-                    <li><a href="#">Final</a></li>
-                </ul>
-            </nav>
         </div>
+
+        <nav id="navigation" aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html"
+                       class="active"
+                       aria-current="page">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">Chamber</a>
+                </li>
+
+                <li>
+                    <a href="#">Final</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
+
     <main>
+
         <h1>Home</h1>
 
+        <!-- About Me -->
         <section>
             <h2>About Me</h2>
+
             <p>
-                My name is Joel Egede, and I am a Software Development student with a strong interest in technology, programming, and web development. I am currently studying at BYU-Idaho through BYU-Pathway Worldwide, where I am developing my skills in HTML, CSS, JavaScript, Python, and C#.
-                I am particularly interested in web development, cybersecurity, machine learning, and building practical software solutions. My goal is to continue improving my technical skills, build meaningful projects, and become a well-rounded software developer who can solve real-world problems through technology.
+                My name is Joel Egede, and I am a Software Development student
+                with a strong interest in technology, programming, and web
+                development. I am currently studying at BYU-Idaho through
+                BYU-Pathway Worldwide, where I am developing my skills in HTML,
+                CSS, JavaScript, Python, and C#.
+            </p>
+
+            <p>
+                Before focusing on software development, I gained professional
+                experience in mechanical engineering and industrial maintenance.
+                That experience helped me develop strong problem-solving,
+                troubleshooting, teamwork, and attention-to-detail skills. I now
+                enjoy applying those same skills to programming and technology.
+            </p>
+
+            <p>
+                I am particularly interested in web development, cybersecurity,
+                machine learning, and building practical software solutions.
+                My goal is to continue improving my technical skills, build
+                meaningful projects, and become a well-rounded software
+                developer who can solve real-world problems through technology.
             </p>
         </section>
 
+
+        <!-- Student Photo -->
         <section>
             <h2>Student Photo</h2>
-            <img src="images/profile-image.png" alt="Photo of Iloabuchi Egede">
+
+            <img src="images/profile-image.png"
+                 alt="Photo of Iloabuchi Egede">
         </section>
 
+
+        <!-- Certificate Courses -->
         <section>
             <h2>Web and Computer Programming Certificate</h2>
 
             <div class="course-filters">
-                <button id="all-courses" type="button">All Courses</button>
-                <button id="wdd-courses" type="button">WDD Courses</button>
-                <button id="cse-courses" type="button">CSE Courses</button>
+                <button id="all-courses" type="button">
+                    All Courses
+                </button>
+
+                <button id="wdd-courses" type="button">
+                    WDD Courses
+                </button>
+
+                <button id="cse-courses" type="button">
+                    CSE Courses
+                </button>
             </div>
 
             <p class="credits">
-                Total Credits: <span id="total-credits">0</span>
+                Total Credits:
+                <span id="total-credits">0</span>
             </p>
 
             <div id="course-container"></div>
         </section>
+
     </main>
 
+
     <footer>
+
         <div class="social-links">
-            <a href="https://github.com/Joel-Egede" target="_blank" rel="noopener noreferrer">
+
+            <a href="https://github.com/Joel-Egede"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Iloabuchi Egede GitHub profile">
                 GitHub
             </a>
 
-            <a href="www.linkedin.com/in/iloabuchi-egede-858717234/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/iloabuchi-egede"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Iloabuchi Egede LinkedIn profile">
                 LinkedIn
             </a>
 
-            <a href="www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/Iloabuchi.Egede"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Iloabuchi Egede Facebook profile">
                 Facebook
             </a>
+
         </div>
 
         <p>
-            &copy; <span id="currentyear"></span> Iloabuchi Egede, Nigeria
+            &copy;
+            <span id="currentyear"></span>
+            Iloabuchi Egede, Nigeria
         </p>
 
         <p id="lastModified"></p>
+
     </footer>
+
 </body>
 </html>
