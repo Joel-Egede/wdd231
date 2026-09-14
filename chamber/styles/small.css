@@ -1,0 +1,237 @@
+
+/* =========================================================
+   Small Screen Styles
+   Lagos Chamber of Commerce
+   WDD 231
+   ========================================================= */
+
+:root {
+    --primary-color: #003366;
+    --accent-color: #d4a017;
+    --background-color: #f5f7fa;
+    --text-color: #1f2933;
+    --white: #ffffff;
+    --border-color: #d9dee5;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.site-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+#menu-button {
+    display: block;
+    margin: 1rem 0 0 auto;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+#main-nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+#main-nav.open {
+    display: flex;
+}
+
+#main-nav a {
+    padding: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#main-nav a:hover,
+#main-nav a.active {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+main {
+    width: min(94%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.page-heading {
+    margin-bottom: 1.5rem;
+}
+
+.page-heading h1 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.page-heading p {
+    max-width: 700px;
+}
+
+.directory-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.directory-controls button {
+    min-width: 90px;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.directory-controls button:hover,
+.directory-controls button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.directory-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.member-card {
+    padding: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.member-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.member-card h2 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.member-card p {
+    margin-bottom: 0.35rem;
+}
+
+.member-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.member-level {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+footer {
+    margin-top: 3rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.footer-container {
+    width: min(94%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p,
+.footer-section a {
+    margin-bottom: 0.25rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* List View */
+
+.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.directory-list .member-card {
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.directory-list .member-card img {
+    display: none;
+}
+
+.directory-list .member-card h2 {
+    margin-bottom: 0.25rem;
+}

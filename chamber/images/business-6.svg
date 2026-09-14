@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360">
+  <rect width="540" height="360" fill="#F5F7FA"/>
+  <rect x="25" y="25" width="490" height="310" rx="22" fill="#fff" stroke="#003366" stroke-width="6"/>
+  <g fill="#003366" stroke="#003366" stroke-linejoin="round"><circle cx="270" cy="220" r="82"/><circle cx="270" cy="220" r="48" fill="#fff"/><path d="M270 175v45l35 25" fill="none" stroke="#D4A017" stroke-width="14" stroke-linecap="round"/></g>
+  <text x="270" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#003366">VI CONSULTING</text>
+  <text x="270" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#003366">Business Consulting</text>
+</svg>

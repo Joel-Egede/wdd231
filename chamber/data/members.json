@@ -1,0 +1,67 @@
+
+[
+    {
+        "name": "Lagos Business Hub",
+        "address": "12 Marina Road, Lagos Island, Lagos",
+        "phone": "+234 801 234 5678",
+        "website": "https://example.com",
+        "image": "images/business-1.svg",
+        "description": "Business consulting and professional services for growing companies.",
+        "membership": 3
+    },
+    {
+        "name": "EkoTech Solutions",
+        "address": "25 Allen Avenue, Ikeja, Lagos",
+        "phone": "+234 802 345 6789",
+        "website": "https://example.com",
+        "image": "images/business-2.svg",
+        "description": "Technology solutions and digital services for businesses in Lagos.",
+        "membership": 3
+    },
+    {
+        "name": "Mainland Foods",
+        "address": "18 Ikorodu Road, Maryland, Lagos",
+        "phone": "+234 803 456 7890",
+        "website": "https://example.com",
+        "image": "images/business-3.svg",
+        "description": "Food production and distribution serving businesses and families across Lagos.",
+        "membership": 2
+    },
+    {
+        "name": "Lekki Creative Studio",
+        "address": "7 Admiralty Way, Lekki Phase 1, Lagos",
+        "phone": "+234 804 567 8901",
+        "website": "https://example.com",
+        "image": "images/business-4.svg",
+        "description": "Creative design, branding, photography, and digital media services.",
+        "membership": 2
+    },
+    {
+        "name": "Ikeja Engineering Services",
+        "address": "33 Obafemi Awolowo Way, Ikeja, Lagos",
+        "phone": "+234 805 678 9012",
+        "website": "https://example.com",
+        "image": "images/business-5.svg",
+        "description": "Engineering, equipment maintenance, and technical support services.",
+        "membership": 1
+    },
+    {
+        "name": "Victoria Island Consulting",
+        "address": "10 Ahmadu Bello Way, Victoria Island, Lagos",
+        "phone": "+234 806 789 0123",
+        "website": "https://example.com",
+        "image": "images/business-6.svg",
+        "description": "Business advisory and consulting services for organizations and entrepreneurs.",
+        "membership": 1
+    },
+    {
+        "name": "Yaba Digital Works",
+        "address": "21 Herbert Macaulay Way, Yaba, Lagos",
+        "phone": "+234 807 890 1234",
+        "website": "https://example.com",
+        "image": "images/business-7.svg",
+        "description": "Web development, software services, and digital solutions for local businesses.",
+        "membership": 1
+    }
+]
+

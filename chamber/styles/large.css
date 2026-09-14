@@ -1,0 +1,76 @@
+
+/* =========================================================
+   Large Screen Styles
+   Lagos Chamber of Commerce
+   WDD 231
+   ========================================================= */
+
+@media screen and (min-width: 700px) {
+
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .brand {
+        flex-shrink: 0;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    #main-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0;
+        gap: 0.25rem;
+    }
+
+    #main-nav a {
+        border-top: none;
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+    }
+
+    .page-heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .directory-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .footer-section {
+        margin-bottom: 0;
+    }
+
+    /*
+       List view on larger screens.
+       The cards become horizontal rows and images
+       remain hidden as required by the project.
+    */
+
+    .directory-list .member-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        column-gap: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .directory-list .member-card img {
+        display: none;
+    }
+}

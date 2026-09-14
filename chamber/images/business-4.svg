@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360">
+  <rect width="540" height="360" fill="#F5F7FA"/>
+  <rect x="25" y="25" width="490" height="310" rx="22" fill="#fff" stroke="#003366" stroke-width="6"/>
+  <g fill="#003366" stroke="#003366" stroke-linejoin="round"><rect x="145" y="145" width="250" height="165" rx="18"/><path d="M175 275l55-70 35 40 35-55 65 85" fill="none" stroke="#D4A017" stroke-width="18"/><circle cx="345" cy="175" r="18" fill="#D4A017"/></g>
+  <text x="270" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#003366">LEKKI CREATIVE STUDIO</text>
+  <text x="270" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#003366">Creative Services</text>
+</svg>

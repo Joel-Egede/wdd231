@@ -1,0 +1,54 @@
+```css
+/* =========================================================
+   Normalize / CSS Reset
+   Lagos Chamber of Commerce
+   WDD 231
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+p,
+ul,
+ol {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+ul,
+ol {
+    padding: 0;
+    list-style: none;
+}
+```
