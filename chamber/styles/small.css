@@ -45,6 +45,8 @@ header {
     width: 55px;
     height: 55px;
     object-fit: contain;
+    background-color: #f5f7fa;
+    border-radius: 50px;
 }
 
 #menu-button {
