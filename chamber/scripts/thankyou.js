@@ -1,87 +1,100 @@
-const menuButton = document.querySelector("#menu-button");
-const mainNav = document.querySelector("#main-nav");
+const menuButton = document.querySelector("#menuButton");
+const primaryNav = document.querySelector("#primaryNav");
 
-menuButton.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
+if (menuButton && primaryNav) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = primaryNav.classList.toggle("open");
 
-    const isOpen = mainNav.classList.contains("open");
+        menuButton.setAttribute("aria-expanded", isOpen);
 
-    menuButton.setAttribute("aria-expanded", isOpen);
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
 
-    menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
+        menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+const currentYear = document.querySelector("#currentyear");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+const lastModified = document.querySelector("#lastModified");
+
+if (lastModified) {
+    const modifiedDate = new Date(document.lastModified);
+
+    lastModified.textContent = modifiedDate.toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
     );
-
-    menuButton.textContent = isOpen ? "✕" : "☰";
-});
+}
 
 
-/* FOOTER */
+/* =========================
+   FORM DATA
+========================= */
 
-document.querySelector("#current-year").textContent =
-    new Date().getFullYear();
-
-document.querySelector("#last-modified").textContent =
-    `Last Modified: ${document.lastModified}`;
+const params =
+    new URLSearchParams(window.location.search);
 
 
-/* FORM DATA */
+function displayValue(elementId, parameterName) {
 
-const params = new URLSearchParams(window.location.search);
+    const element =
+        document.querySelector(`#${elementId}`);
 
-const firstName = params.get("firstName");
-const lastName = params.get("lastName");
-const email = params.get("email");
-const phone = params.get("phone");
-const organization = params.get("organization");
-const organizationTitle = params.get("organizationTitle");
-const membership = params.get("membership");
-const description = params.get("description");
-const timestamp = params.get("timestamp");
+    if (!element) return;
 
-const applicationDetails = document.querySelector("#application-details");
+    const value =
+        params.get(parameterName);
 
-applicationDetails.innerHTML = `
-    <h2>Application Details</h2>
+    if (value) {
+        element.textContent = value;
+    } else {
+        element.textContent = "--";
+    }
+}
 
-    <p>
-        <strong>Name:</strong>
-        ${firstName || ""} ${lastName || ""}
-    </p>
 
-    <p>
-        <strong>Organization:</strong>
-        ${organization || ""}
-    </p>
+displayValue(
+    "displayFirstName",
+    "firstName"
+);
 
-    <p>
-        <strong>Organization Title:</strong>
-        ${organizationTitle || "Not provided"}
-    </p>
+displayValue(
+    "displayLastName",
+    "lastName"
+);
 
-    <p>
-        <strong>Email:</strong>
-        ${email || ""}
-    </p>
+displayValue(
+    "displayEmail",
+    "email"
+);
 
-    <p>
-        <strong>Phone:</strong>
-        ${phone || ""}
-    </p>
+displayValue(
+    "displayPhone",
+    "phone"
+);
 
-    <p>
-        <strong>Membership Level:</strong>
-        ${membership || ""}
-    </p>
+displayValue(
+    "displayOrganization",
+    "organization"
+);
 
-    <p>
-        <strong>Organization Description:</strong>
-        ${description || "Not provided"}
-    </p>
-
-    <p>
-        <strong>Application Submitted:</strong>
-        ${timestamp || "Not available"}
-    </p>
-`;
+displayValue(
+    "displayMembership",
+    "membership"
+);

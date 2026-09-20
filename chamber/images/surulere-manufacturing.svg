@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#f5f7fa"/>
+    <rect x="35" y="55" width="90" height="75" fill="#003366"/>
+    <polygon points="30,55 80,25 130,55" fill="#D4A017"/>
+    <rect x="70" y="90" width="25" height="40" fill="white"/>
+    <text x="150" y="82" font-family="Arial" font-size="24" font-weight="bold" fill="#003366">SURULERE</text>
+    <text x="150" y="115" font-family="Arial" font-size="23" fill="#1f2933">MANUFACTURING</text>
+</svg>

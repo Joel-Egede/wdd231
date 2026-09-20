@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#D4A017"/>
+    <circle cx="85" cy="90" r="50" fill="#003366"/>
+    <path d="M65 65v50M85 65v50M105 65v50" stroke="white" stroke-width="7"/>
+    <text x="155" y="82" font-family="Arial" font-size="25" font-weight="bold" fill="#003366">IKEJA</text>
+    <text x="155" y="115" font-family="Arial" font-size="23" fill="#003366">FOOD &amp; BEVERAGE</text>
+</svg>

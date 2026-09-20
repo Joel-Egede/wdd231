@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#003366"/>
+    <path d="M35 65h90L80 35zM45 75h12v55H45zM72 75h12v55H72zM99 75h12v55H99zM35 135h90v10H35z" fill="#D4A017"/>
+    <text x="150" y="82" font-family="Arial" font-size="24" font-weight="bold" fill="white">LAGOS</text>
+    <text x="150" y="115" font-family="Arial" font-size="23" fill="#D4A017">FINANCIAL SERVICES</text>
+</svg>

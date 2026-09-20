@@ -1,61 +1,132 @@
+const menuButton = document.querySelector("#menuButton");
+const primaryNav = document.querySelector("#primaryNav");
 
-const directory = document.querySelector("#directory");
-const gridButton = document.querySelector("#grid-button");
-const listButton = document.querySelector("#list-button");
-const menuButton = document.querySelector("#menu-button");
-const mainNav = document.querySelector("#main-nav");
+if (menuButton && primaryNav) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = primaryNav.classList.toggle("open");
 
-const dataURL = "data/members.json";
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+}
 
 
-async function getMembers() {
-    try {
-        const response = await fetch(dataURL);
+/* =========================
+   FOOTER
+========================= */
 
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
+const currentYear = document.querySelector("#currentyear");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+const lastModified = document.querySelector("#lastModified");
+
+if (lastModified) {
+    const modifiedDate = new Date(document.lastModified);
+
+    lastModified.textContent = modifiedDate.toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
         }
+    );
+}
 
-        const members = await response.json();
 
-        displayMembers(members);
-    } catch (error) {
-        console.error("Unable to load member data:", error);
+/* =========================
+   MEMBER DIRECTORY
+========================= */
 
-        directory.innerHTML = `
-            <p class="error-message">
-                Sorry, the business directory could not be loaded.
-                Please try again later.
-            </p>
-        `;
+const membersContainer =
+    document.querySelector("#members");
+
+
+function getMembershipInfo(level) {
+
+    switch (Number(level)) {
+
+        case 3:
+            return {
+                name: "Gold Member",
+                className: "membership-gold"
+            };
+
+        case 2:
+            return {
+                name: "Silver Member",
+                className: "membership-silver"
+            };
+
+        default:
+            return {
+                name: "Member",
+                className: "membership-member"
+            };
     }
 }
 
 
-function displayMembers(members) {
-    directory.innerHTML = "";
+function createMemberCard(member) {
 
-    members.forEach((member) => {
-        const card = document.createElement("article");
+    const membership =
+        getMembershipInfo(member.membershipLevel);
 
-        card.classList.add("member-card");
+    const card =
+        document.createElement("article");
 
-        card.innerHTML = `
-            <img
-                src="${member.image}"
-                alt="${member.name} business image"
-                loading="lazy"
-            >
+    card.className = "member-card";
 
-            <h2>${member.name}</h2>
+    card.innerHTML = `
+        <img
+            class="member-logo"
+            src="images/${member.image}"
+            alt="${member.name} logo"
+            width="300"
+            height="150"
+            loading="lazy"
+        >
 
-            <p>${member.description}</p>
+        <div class="member-info">
 
-            <p><strong>Address:</strong> ${member.address}</p>
+            <h3>${member.name}</h3>
 
-            <p><strong>Phone:</strong> ${member.phone}</p>
+            <p>
+                <span class="member-label">
+                    Address:
+                </span>
+                ${member.address}
+            </p>
+
+            <p>
+                <span class="member-label">
+                    Phone:
+                </span>
+
+                <a
+                    href="tel:${member.phone.replace(/\s/g, "")}"
+                >
+                    ${member.phone}
+                </a>
+            </p>
+
+            <span class="membership ${membership.className}">
+                ${membership.name}
+            </span>
+
+            <br>
 
             <a
+                class="website-link"
                 href="${member.website}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -63,59 +134,149 @@ function displayMembers(members) {
                 Visit Website
             </a>
 
-            <span class="member-level">
-                ${getMembershipLevel(member.membership)}
-            </span>
-        `;
+        </div>
+    `;
 
-        directory.appendChild(card);
+    return card;
+}
+
+
+function displayMembers(members) {
+
+    if (!membersContainer) return;
+
+    membersContainer.innerHTML = "";
+
+    members.forEach(member => {
+        membersContainer.appendChild(
+            createMemberCard(member)
+        );
     });
 }
 
 
-function getMembershipLevel(level) {
-    if (level === 3) {
-        return "Gold Member";
-    }
+async function getMembers() {
 
-    if (level === 2) {
-        return "Silver Member";
-    }
+    if (!membersContainer) return;
 
-    return "Member";
+    try {
+
+        const response =
+            await fetch("data/members.json");
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
+        }
+
+        const members =
+            await response.json();
+
+        displayMembers(members);
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load member data:",
+            error
+        );
+
+        membersContainer.innerHTML = `
+            <p class="error-message">
+                Sorry, the chamber member directory
+                could not be loaded.
+                Please try again later.
+            </p>
+        `;
+    }
 }
 
 
-gridButton.addEventListener("click", () => {
-    directory.classList.remove("directory-list");
-    directory.classList.add("directory-grid");
+/* =========================
+   GRID / LIST VIEW
+========================= */
 
-    gridButton.classList.add("active");
-    listButton.classList.remove("active");
-});
+const gridButton =
+    document.querySelector("#gridView");
 
-
-listButton.addEventListener("click", () => {
-    directory.classList.remove("directory-grid");
-    directory.classList.add("directory-list");
-
-    listButton.classList.add("active");
-    gridButton.classList.remove("active");
-});
+const listButton =
+    document.querySelector("#listView");
 
 
-menuButton.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
+function showGrid() {
 
-    const isOpen = mainNav.classList.contains("open");
+    if (!membersContainer) return;
 
-    menuButton.setAttribute("aria-expanded", isOpen);
-});
+    membersContainer.classList.remove(
+        "member-list"
+    );
+
+    membersContainer.classList.add(
+        "member-grid"
+    );
+
+    if (gridButton) {
+        gridButton.classList.add("active");
+        gridButton.setAttribute(
+            "aria-pressed",
+            "true"
+        );
+    }
+
+    if (listButton) {
+        listButton.classList.remove("active");
+        listButton.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+    }
+}
 
 
-document.querySelector("#current-year").textContent = new Date().getFullYear();
+function showList() {
 
-document.querySelector("#last-modified").textContent = document.lastModified;
+    if (!membersContainer) return;
+
+    membersContainer.classList.remove(
+        "member-grid"
+    );
+
+    membersContainer.classList.add(
+        "member-list"
+    );
+
+    if (listButton) {
+        listButton.classList.add("active");
+        listButton.setAttribute(
+            "aria-pressed",
+            "true"
+        );
+    }
+
+    if (gridButton) {
+        gridButton.classList.remove("active");
+        gridButton.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+    }
+}
+
+
+if (gridButton) {
+    gridButton.addEventListener(
+        "click",
+        showGrid
+    );
+}
+
+if (listButton) {
+    listButton.addEventListener(
+        "click",
+        showList
+    );
+}
 
 
 getMembers();

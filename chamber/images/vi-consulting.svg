@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#f5f7fa"/>
+    <polygon points="80,35 130,90 80,145 30,90" fill="#003366"/>
+    <text x="80" y="103" text-anchor="middle" font-family="Arial" font-size="30" font-weight="bold" fill="#D4A017">VI</text>
+    <text x="155" y="82" font-family="Arial" font-size="24" font-weight="bold" fill="#003366">VICTORIA</text>
+    <text x="155" y="115" font-family="Arial" font-size="24" fill="#1f2933">CONSULTING</text>
+</svg>

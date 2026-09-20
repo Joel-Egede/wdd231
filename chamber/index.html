@@ -4,71 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lagos Chamber of Commerce | Home</title>
-
-    <meta name="description"
-        content="Welcome to the Lagos Chamber of Commerce. Discover local businesses, events, weather, and opportunities for businesses and entrepreneurs in Lagos, Nigeria.">
+    <meta
+        name="description"
+        content="Lagos Chamber of Commerce — connecting businesses, promoting economic growth, and creating opportunities in Lagos."
+    >
 
     <meta name="author" content="Iloabuchi Egede">
 
-    <link rel="icon" href="favicon.ico">
-
-    <meta property="og:title"
-        content="Lagos Chamber of Commerce | Home">
-
-    <meta property="og:description"
-        content="Discover businesses, events, opportunities, and community resources through the Lagos Chamber of Commerce.">
-
-    <meta property="og:image"
-        content="https://joel-egede.github.io/wdd231/chamber/images/social-preview.jpg">
-
-    <meta property="og:url"
-        content="https://joel-egede.github.io/wdd231/chamber/index.html">
-
+    <meta property="og:title" content="Lagos Chamber of Commerce">
+    <meta
+        property="og:description"
+        content="Connecting businesses and promoting economic growth in Lagos."
+    >
     <meta property="og:type" content="website">
+    <meta property="og:image" content="images/social-preview.jpg">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lagos Chamber of Commerce | Home</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
+
+    <script src="scripts/home.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <div class="site-header">
+<header class="site-header">
+    <div class="container header-content">
 
-        <a href="index.html" class="site-logo">
+        <a class="brand" href="index.html">
             <img
                 src="images/logo.png"
-                alt="Lagos Chamber of Commerce logo">
+                alt="Lagos Chamber of Commerce logo"
+                width="500"
+                height="300"
+                loading="lazy"
+
+            >
+
+            <div>
+                <span class="site-name">Lagos Chamber Of Commerce</span>
+            </div>
         </a>
 
-        <div class="site-name">
-            Lagos Chamber of Commerce
-        </div>
-
         <button
-            id="menu-button"
+            id="menuButton"
+            class="menu-button"
             type="button"
             aria-label="Open navigation menu"
-            aria-expanded="false">
+            aria-expanded="false"
+            aria-controls="primaryNav"
+        >
             ☰
         </button>
 
-        <nav id="navigation" aria-label="Main navigation">
+        <nav
+            id="primaryNav"
+            class="primary-nav"
+            aria-label="Main navigation"
+        >
             <ul>
                 <li>
                     <a
                         href="index.html"
                         class="active"
-                        aria-current="page">
+                        aria-current="page"
+                    >
                         Home
                     </a>
                 </li>
@@ -90,22 +94,11 @@
     </div>
 </header>
 
-
 <main>
 
-    <h1>Lagos Chamber of Commerce</h1>
-
-    <!-- HERO -->
     <section class="hero">
-
-        <img
-            src="images/hero.webp"
-            alt="Lagos city skyline"
-            width="1200"
-            height="600">
-
         <div class="hero-content">
-            <h2>Connecting Businesses. Building Lagos.</h2>
+            <h1>Welcome to the Lagos Chamber of Commerce</h1>
 
             <p>
                 Discover opportunities, local businesses,
@@ -116,204 +109,157 @@
                 Join the Chamber
             </a>
         </div>
-
     </section>
 
-
-    <!-- CURRENT EVENTS -->
     <section class="home-section events-section">
+        <div class="container">
+            <h2>Events</h2>
 
-        <h2>Current Events</h2>
+            <div class="events-grid">
 
-        <div class="events-grid">
+                <article class="event-card">
+                    <h3>Business Networking Event</h3>
+                    <p>
+                        Connect with entrepreneurs and business leaders
+                        from across Lagos.
+                    </p>
+                    <p><strong>Date:</strong> October 10, 2026</p>
+                </article>
 
-            <article class="event-card">
-                <h3>Lagos Business Networking</h3>
+                <article class="event-card">
+                    <h3>Small Business Workshop</h3>
+                    <p>
+                        Learn practical strategies for growing and
+                        managing your business.
+                    </p>
+                    <p><strong>Date:</strong> October 17, 2026</p>
+                </article>
 
-                <p class="event-date">
-                    September 24, 2026
-                </p>
+                <article class="event-card">
+                    <h3>Entrepreneurship Forum</h3>
+                    <p>
+                        Discover new opportunities and connect with
+                        business professionals.
+                    </p>
+                    <p><strong>Date:</strong> October 24, 2026</p>
+                </article>
 
-                <p>
-                    Meet entrepreneurs and business professionals
-                    and build valuable connections across Lagos.
-                </p>
-
-                <a href="discover.html">
-                    Learn More
-                </a>
-            </article>
-
-
-            <article class="event-card">
-                <h3>Small Business Workshop</h3>
-
-                <p class="event-date">
-                    September 26, 2026
-                </p>
-
-                <p>
-                    Learn practical strategies for improving
-                    business operations and reaching new customers.
-                </p>
-
-                <a href="discover.html">
-                    Learn More
-                </a>
-            </article>
-
-
-            <article class="event-card">
-                <h3>Entrepreneurship Forum</h3>
-
-                <p class="event-date">
-                    September 30, 2026
-                </p>
-
-                <p>
-                    Connect with entrepreneurs and explore
-                    opportunities for business growth in Lagos.
-                </p>
-
-                <a href="discover.html">
-                    Learn More
-                </a>
-            </article>
-
+            </div>
         </div>
-
     </section>
 
-
-    <!-- WEATHER -->
     <section class="home-section weather-section">
+        <div class="container">
 
-        <h2>Lagos Weather</h2>
+            <h2>Lagos Weather</h2>
 
-        <div class="weather-container">
+            <div class="weather-card">
 
-            <div class="current-weather">
+                <div class="weather-current">
 
-                <h3>Current Weather</h3>
+                    <img
+                        id="weatherIcon"
+                        src=""
+                        alt=""
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                    >
 
-                <p class="temperature">
-                    <span id="current-temperature">--</span>°C
-                </p>
+                    <div>
+                        <p class="temperature">
+                            <strong id="temperature">--</strong>°C
+                        </p>
 
-                <p id="weather-description">
-                    Loading weather...
-                </p>
+                        <p id="weatherDescription">
+                            Loading weather...
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="weather-details">
+                    <p>
+                        <strong>Humidity:</strong>
+                        <span id="humidity">--</span>%
+                    </p>
+
+                    <p>
+                        <strong>Wind Speed:</strong>
+                        <span id="windSpeed">--</span> km/h
+                    </p>
+                </div>
 
             </div>
 
-
-            <div class="forecast-container">
+            <div class="forecast">
 
                 <h3>3-Day Forecast</h3>
 
-                <div
-                    id="forecast"
-                    class="forecast-grid"
-                    aria-live="polite">
+                <div id="forecastContainer">
+                    <p>Loading forecast...</p>
                 </div>
 
             </div>
 
         </div>
-
-        <p
-            id="weather-message"
-            class="weather-message"
-            aria-live="polite">
-        </p>
-
     </section>
 
+    <section class="home-section spotlight-section">
+        <div class="container">
 
-    <!-- COMPANY SPOTLIGHTS -->
-    <section class="home-section spotlights-section">
+            <h2>Business Spotlights</h2>
 
-        <h2>Business Spotlights</h2>
-
-        <div
-            id="spotlights"
-            class="spotlight-grid">
-
-            <p>Loading chamber members...</p>
+            <div id="spotlightContainer" class="spotlight-grid">
+                <p>Loading business spotlights...</p>
+            </div>
 
         </div>
-
     </section>
 
 </main>
 
+<footer class="site-footer">
+    <div class="footer-content">
 
-<footer>
+        <div>
+            <h2>Lagos Chamber of Commerce</h2>
 
-    <div class="footer-contact">
+            <p>
+                Connecting businesses and promoting economic
+                growth in Lagos.
+            </p>
+        </div>
 
-        <h2>Lagos Chamber of Commerce</h2>
+        <div>
+            <p>
+                Email:
+                <a href="mailto:info@lagoschamber.org">
+                    info@lagoschamber.org
+                </a>
+            </p>
 
-        <p>
-            Business and Community Support
-        </p>
+            <p>
+                Phone:
+                <a href="tel:+2348000000000">
+                    +234 800 000 0000
+                </a>
+            </p>
+        </div>
 
-        <p>
-            Lagos, Nigeria
-        </p>
+        <div class="footer-social">
+            <h2>Follow Us</h2>
 
-        <p>
-            Phone: +234 800 000 0000
-        </p>
-
-        <p>
-            Email: info@lagoschamber.example
-        </p>
-
+            <div class="social-links">
+                <a href="www.facebook.com" aria-label="Facebook">Facebook</a>
+                <a href="www.intagram.com" aria-label="Instagram">Instagram</a>
+                <a href="www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+                <a href="www.twitter.com" aria-label="X">X</a>
+            </div>
+        </div>
+        
     </div>
-
-
-    <div class="social-links" aria-label="Social media links">
-
-        <a href="#" aria-label="YouTube">
-            YouTube
-        </a>
-
-        <a href="#" aria-label="Twitter">
-            Twitter
-        </a>
-
-        <a href="#" aria-label="LinkedIn">
-            LinkedIn
-        </a>
-
-    </div>
-
-
-    <div class="footer-development">
-
-        <p>
-            WDD 231 Web Frontend Development I
-        </p>
-
-        <p>
-            Iloabuchi Egede
-        </p>
-
-        <p>
-            &copy;
-            <span id="currentyear"></span>
-            Lagos Chamber of Commerce
-        </p>
-
-        <p id="lastModified"></p>
-
-    </div>
-
 </footer>
-
-
-<script src="scripts/home.js" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#003366"/>
+    <circle cx="80" cy="90" r="48" fill="#D4A017"/>
+    <path d="M55 105l25-35 25 35z" fill="#003366"/>
+    <text x="145" y="82" font-family="Arial" font-size="25" font-weight="bold" fill="white">LEKKI</text>
+    <text x="145" y="115" font-family="Arial" font-size="24" fill="#D4A017">CREATIVE WORKS</text>
+</svg>

@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thank You | Lagos Chamber of Commerce</title>
-
     <meta
         name="description"
-        content="Thank you for applying to join the Lagos Chamber of Commerce."
+        content="Thank you for applying for membership with the Lagos Chamber of Commerce."
     >
 
     <meta name="author" content="Iloabuchi Egede">
 
-    <link rel="icon" href="favicon.ico">
+    <meta property="og:title" content="Thank You | Lagos Chamber of Commerce">
+    <meta
+        property="og:description"
+        content="Thank you for your Lagos Chamber of Commerce membership application."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/social-preview.jpg">
+
+    <title>Thank You | Lagos Chamber of Commerce</title>
+
+    <link rel="icon" href="images/favicon.svg">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -25,95 +32,177 @@
 
 <body>
 
-    <header>
-        <div class="site-header">
+<header class="site-header">
+    <div class="container header-content">
 
-            <a href="index.html" class="brand">
-                <img
-                    src="images/logo.png"
-                    alt="Lagos Chamber of Commerce logo"
-                >
-                <span>Lagos Chamber of Commerce</span>
-            </a>
+        <a class="brand" href="index.html">
+            <img
+                src="images/logo.png"
+                alt="Lagos Chamber of Commerce logo"
 
-            <button
-                id="menu-button"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="main-nav"
             >
-                ☰
-            </button>
 
-            <nav id="main-nav">
-                <a href="index.html">Home</a>
-                <a href="discover.html">Discover</a>
-                <a href="directory.html">Directory</a>
-                <a href="join.html">Join</a>
-            </nav>
+            <div>
+                <span class="site-name">Lagos Chamber Of Commerce</span>
+            </div>
+        </a>
 
-        </div>
-    </header>
+        <button
+            id="menuButton"
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primaryNav"
+        >
+            ☰
+        </button>
 
-    <main>
+        <nav
+            id="primaryNav"
+            class="primary-nav"
+            aria-label="Main navigation"
+        >
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-        <section class="thank-you">
+                <li>
+                    <a href="discover.html">Discover</a>
+                </li>
+
+                <li>
+                    <a href="directory.html">Directory</a>
+                </li>
+
+                <li>
+                    <a href="join.html">Join</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
 
             <h1>Thank You!</h1>
 
             <p>
-                Thank you for applying to join the Lagos Chamber of Commerce.
+                Your membership application has been received.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="container thank-you-section">
+
+        <div class="thank-you-card">
+
+            <h2>Application Received</h2>
+
+            <p>
+                Thank you for your interest in joining the
+                Lagos Chamber of Commerce.
             </p>
 
             <p>
-                We have received your membership application.
+                We have received the information you submitted.
+                Below is a summary of your application.
             </p>
 
-            <div id="application-details"></div>
+            <div class="application-summary">
 
-            <a href="index.html" class="cta-button">
+                <p>
+                    <strong>First Name:</strong>
+                    <span id="displayFirstName">--</span>
+                </p>
+
+                <p>
+                    <strong>Last Name:</strong>
+                    <span id="displayLastName">--</span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="displayEmail">--</span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="displayPhone">--</span>
+                </p>
+
+                <p>
+                    <strong>Organization:</strong>
+                    <span id="displayOrganization">--</span>
+                </p>
+
+                <p>
+                    <strong>Membership Level:</strong>
+                    <span id="displayMembership">--</span>
+                </p>
+
+            </div>
+
+            <a
+                class="cta-button"
+                href="index.html"
+            >
                 Return to Home
             </a>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
 
-    <footer>
+</main>
 
-        <div class="footer-contact">
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div>
             <h2>Lagos Chamber of Commerce</h2>
-            <p>Lagos, Nigeria</p>
-            <p>Email: info@lagoschamber.org</p>
-            <p>Phone: +234 800 000 0000</p>
+
+            <p>
+                Connecting businesses and promoting economic
+                growth in Lagos.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                Email:
+                <a href="mailto:info@lagoschamber.org">
+                    info@lagoschamber.org
+                </a>
+            </p>
+
+            <p>
+                Phone:
+                <a href="tel:+2348000000000">
+                    +234 800 000 0000
+                </a>
+            </p>
         </div>
 
         <div class="footer-social">
-            <h2>Connect With Us</h2>
+            <h2>Follow Us</h2>
 
             <div class="social-links">
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="www.facebook.com" aria-label="Facebook">Facebook</a>
+                <a href="www.instagram.com" aria-label="Instagram">Instagram</a>
+                <a href="www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+                <a href="www.twitter.com" aria-label="X">X</a>
             </div>
         </div>
-
-        <div class="footer-development">
-            <p>
-                WDD 231 Chamber Project
-            </p>
-
-            <p>
-                &copy; <span id="current-year"></span>
-                Lagos Chamber of Commerce
-            </p>
-
-            <p id="last-modified"></p>
-        </div>
-
-    </footer>
+        
+    </div>
+</footer>
 
 </body>
-
 </html>

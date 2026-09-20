@@ -1,148 +1,200 @@
-// ==========================================
-// LAGOS CHAMBER OF COMMERCE
-// HOME PAGE JAVASCRIPT
-// ==========================================
+const menuButton = document.querySelector("#menuButton");
+const primaryNav = document.querySelector("#primaryNav");
+
+if (menuButton && primaryNav) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = primaryNav.classList.toggle("open");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+}
 
 
-// ---------- HAMBURGER MENU ----------
+/* =========================
+   FOOTER
+========================= */
 
-const menuButton = document.querySelector("#menu-button");
-const navigation = document.querySelector("#navigation");
+const currentYear = document.querySelector("#currentyear");
 
-menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
 
-    const isOpen = navigation.classList.contains("open");
+const lastModified = document.querySelector("#lastModified");
 
-    menuButton.setAttribute("aria-expanded", isOpen);
+if (lastModified) {
+    const modifiedDate = new Date(document.lastModified);
 
-    menuButton.textContent = isOpen ? "✕" : "☰";
-});
-
-
-// ---------- CURRENT YEAR ----------
-
-document.querySelector("#currentyear").textContent =
-    new Date().getFullYear();
-
-
-// ---------- LAST MODIFIED ----------
-
-document.querySelector("#lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+    lastModified.textContent = modifiedDate.toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
+    );
+}
 
 
-// ---------- WEATHER ----------
+/* =========================
+   WEATHER
+========================= */
 
-//  OpenWeatherMap API .
-const API_KEY = "28de55f2b19a9855641713247937ce16";
+const API_KEY = "1c753bcebdd85f9d7cdda3da50d061f6";
 
+const weatherIcon = document.querySelector("#weatherIcon");
+const temperature = document.querySelector("#temperature");
+const weatherDescription = document.querySelector("#weatherDescription");
+const humidity = document.querySelector("#humidity");
+const windSpeed = document.querySelector("#windSpeed");
+const forecastContainer = document.querySelector("#forecastContainer");
 
-const latitude = 6.5244;
-const longitude = 3.3792;
-
-const currentWeatherURL =
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+const weatherURL =
+    `https://api.openweathermap.org/data/2.5/weather?q=Lagos,NG&units=metric&appid=${API_KEY}`;
 
 const forecastURL =
-    `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+    `https://api.openweathermap.org/data/2.5/forecast?q=Lagos,NG&units=metric&appid=${API_KEY}`;
 
-
-// ---------- CURRENT WEATHER ----------
 
 async function getCurrentWeather() {
+    if (!temperature) return;
 
     try {
-
-        const response = await fetch(currentWeatherURL);
+        const response = await fetch(weatherURL);
 
         if (!response.ok) {
-            throw new Error("Unable to retrieve current weather.");
+            throw new Error(`Weather request failed: ${response.status}`);
         }
 
         const data = await response.json();
 
-        document.querySelector("#current-temperature").textContent =
-            Math.round(data.main.temp);
+        temperature.textContent = Math.round(data.main.temp);
 
-        document.querySelector("#weather-description").textContent =
-            data.weather[0].description;
+        weatherDescription.textContent =
+            data.weather[0].description.replace(/\b\w/g, letter =>
+                letter.toUpperCase()
+            );
+
+        humidity.textContent = data.main.humidity;
+
+        windSpeed.textContent =
+            Math.round(data.wind.speed * 3.6);
+
+        if (weatherIcon) {
+            weatherIcon.src =
+                `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+            weatherIcon.alt =
+                data.weather[0].description;
+        }
 
     } catch (error) {
+        console.error("Unable to load current weather:", error);
 
-        console.error(error);
-
-        document.querySelector("#current-temperature").textContent = "--";
-
-        document.querySelector("#weather-description").textContent =
+        temperature.textContent = "--";
+        weatherDescription.textContent =
             "Weather information unavailable.";
+        humidity.textContent = "--";
+        windSpeed.textContent = "--";
     }
 }
 
 
-// ---------- THREE-DAY FORECAST ----------
-
 async function getForecast() {
-
-    const forecastContainer =
-        document.querySelector("#forecast");
+    if (!forecastContainer) return;
 
     try {
-
         const response = await fetch(forecastURL);
 
         if (!response.ok) {
-            throw new Error("Unable to retrieve forecast.");
+            throw new Error(`Forecast request failed: ${response.status}`);
         }
 
         const data = await response.json();
 
-        forecastContainer.innerHTML = "";
-
         const dailyForecasts = [];
 
         for (const item of data.list) {
-
             const forecastDate = new Date(item.dt * 1000);
+
+            const dateKey = forecastDate.toLocaleDateString(
+                "en-US",
+                {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit"
+                }
+            );
 
             const hour = forecastDate.getHours();
 
             if (
-                hour === 12 &&
-                dailyForecasts.length < 3
+                hour >= 11 &&
+                hour <= 13 &&
+                !dailyForecasts.some(
+                    forecast => forecast.dateKey === dateKey
+                )
             ) {
-                dailyForecasts.push(item);
+                dailyForecasts.push({
+                    dateKey: dateKey,
+                    date: forecastDate,
+                    temperature: item.main.temp,
+                    description: item.weather[0].description,
+                    icon: item.weather[0].icon
+                });
+            }
+
+            if (dailyForecasts.length === 3) {
+                break;
             }
         }
 
-        dailyForecasts.forEach((day) => {
+        forecastContainer.innerHTML = "";
 
-            const date = new Date(day.dt * 1000);
+        dailyForecasts.forEach(forecast => {
+            const article = document.createElement("article");
 
-            const dayName =
-                date.toLocaleDateString("en-US", {
-                    weekday: "short"
-                });
+            article.className = "forecast-card";
 
-            const card =
-                document.createElement("article");
+            article.innerHTML = `
+                <h4>
+                    ${forecast.date.toLocaleDateString("en-US", {
+                        weekday: "long"
+                    })}
+                </h4>
 
-            card.classList.add("forecast-card");
+                <img
+                    src="https://openweathermap.org/img/wn/${forecast.icon}@2x.png"
+                    alt="${forecast.description}"
+                    width="60"
+                    height="60"
+                >
 
-            card.innerHTML = `
-                <h4>${dayName}</h4>
-                <p class="forecast-temperature">
-                    ${Math.round(day.main.temp)}°C
+                <p>
+                    <strong>
+                        ${Math.round(forecast.temperature)}°C
+                    </strong>
                 </p>
-                <p>${day.weather[0].description}</p>
+
+                <p>
+                    ${forecast.description.replace(/\b\w/g, letter =>
+                        letter.toUpperCase()
+                    )}
+                </p>
             `;
 
-            forecastContainer.appendChild(card);
+            forecastContainer.appendChild(article);
         });
 
     } catch (error) {
-
-        console.error(error);
+        console.error("Unable to load forecast:", error);
 
         forecastContainer.innerHTML =
             "<p>Forecast information unavailable.</p>";
@@ -150,108 +202,96 @@ async function getForecast() {
 }
 
 
-// ---------- BUSINESS SPOTLIGHTS ----------
+/* =========================
+   BUSINESS SPOTLIGHTS
+========================= */
+
+const spotlightContainer =
+    document.querySelector("#spotlightContainer");
 
 async function getSpotlights() {
-
-    const spotlightContainer =
-        document.querySelector("#spotlights");
+    if (!spotlightContainer) return;
 
     try {
-
-        const response =
-            await fetch("data/members.json");
+        const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error(
-                "Unable to retrieve member data."
-            );
+            throw new Error(`Member request failed: ${response.status}`);
         }
 
         const members = await response.json();
 
+        const qualifiedMembers = members.filter(
+            member =>
+                Number(member.membershipLevel) === 2 ||
+                Number(member.membershipLevel) === 3
+        );
 
-        // Select only Gold and Silver members.
-
-        const qualifiedMembers =
-            members.filter(
-                member =>
-                    member.membership === 2 ||
-                    member.membership === 3
-            );
-
-
-        // Randomize the qualified members.
-
-        qualifiedMembers.sort(
+        const shuffled = [...qualifiedMembers].sort(
             () => Math.random() - 0.5
         );
 
-
-        // Select up to three members.
-
-        const selectedMembers =
-            qualifiedMembers.slice(0, 3);
-
+        const selectedMembers = shuffled.slice(0, 3);
 
         spotlightContainer.innerHTML = "";
 
+        selectedMembers.forEach(member => {
 
-        selectedMembers.forEach((member) => {
+            const article = document.createElement("article");
 
-            const card =
-                document.createElement("article");
+            article.className = "spotlight-card";
 
-            card.classList.add("spotlight-card");
-
-
-            const membershipName =
-                member.membership === 3
+            const membership =
+                Number(member.membershipLevel) === 3
                     ? "Gold Member"
                     : "Silver Member";
 
-
-            card.innerHTML = `
+            article.innerHTML = `
                 <img
-                    class="spotlight-logo"
-                    src="${member.image}"
+                    src="images/${member.image}"
                     alt="${member.name} logo"
-                    loading="lazy">
+                    width="300"
+                    height="150"
+                    loading="lazy"
+                >
 
                 <h3>${member.name}</h3>
 
-                <span class="membership-level">
-                    ${membershipName}
-                </span>
+                <p>
+                    <strong>Address:</strong>
+                    ${member.address}
+                </p>
 
-                <p>${member.address}</p>
+                <p>
+                    <strong>Phone:</strong>
+                    ${member.phone}
+                </p>
 
-                <p>${member.phone}</p>
-
-                <p>${member.description}</p>
+                <p>
+                    <strong>Membership:</strong>
+                    ${membership}
+                </p>
 
                 <a
                     href="${member.website}"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     Visit Website
                 </a>
             `;
 
-            spotlightContainer.appendChild(card);
+            spotlightContainer.appendChild(article);
         });
 
     } catch (error) {
-
-        console.error(error);
+        console.error("Unable to load spotlights:", error);
 
         spotlightContainer.innerHTML =
-            "<p>Business information unavailable.</p>";
+            "<p>Business spotlights are unavailable.</p>";
     }
 }
 
-
-// ---------- RUN FUNCTIONS ----------
 
 getCurrentWeather();
 getForecast();

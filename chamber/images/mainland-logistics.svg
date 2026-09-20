@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="#003366"/>
+    <rect x="35" y="55" width="95" height="70" rx="8" fill="#D4A017"/>
+    <path d="M130 75h35l25 25v25h-60z" fill="#D4A017"/>
+    <circle cx="70" cy="135" r="13" fill="white"/>
+    <circle cx="160" cy="135" r="13" fill="white"/>
+    <text x="210" y="85" font-family="Arial" font-size="25" font-weight="bold" fill="white">MAINLAND</text>
+    <text x="210" y="118" font-family="Arial" font-size="25" fill="#D4A017">LOGISTICS</text>
+</svg>
