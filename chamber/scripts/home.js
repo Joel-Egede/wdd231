@@ -35,7 +35,8 @@ document.querySelector("#lastModified").textContent =
 // ---------- WEATHER ----------
 
 //  OpenWeatherMap API .
-const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your actual OpenWeatherMap API key.
+const API_KEY = "28de55f2b19a9855641713247937ce16";
+
 
 const latitude = 6.5244;
 const longitude = 3.3792;
