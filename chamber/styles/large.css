@@ -1,76 +1,255 @@
+@media screen and (min-width: 640px) {
 
-/* =========================================================
-   Large Screen Styles
-   Lagos Chamber of Commerce
-   WDD 231
-   ========================================================= */
+    /* ==============================
+       HEADER
+    ============================== */
 
-@media screen and (min-width: 700px) {
-
-    .site-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
+    .site-header,
+    .header-container {
         padding: 1rem 2rem;
-    }
-
-    .brand {
-        flex-shrink: 0;
+        flex-wrap: nowrap;
     }
 
     #menu-button {
         display: none;
     }
 
+    /*
+       All three navigation structures:
+       Home: #navigation
+       Discover: #navigation
+       Directory/Join/Thank You: #main-nav
+    */
+
+    #navigation,
     #main-nav {
+        display: block;
+        width: auto;
+        margin-left: auto;
+    }
+
+    /* Home navigation */
+
+    #navigation ul {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        margin-top: 0;
         gap: 0.25rem;
     }
 
+    /* Discover, Directory, Join and Thank You */
+
+    #navigation:not(:has(ul)),
+    #main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    #navigation a,
     #main-nav a {
         border-top: none;
-        padding: 0.75rem 1rem;
-        border-radius: 4px;
+        padding: 0.75rem 0.9rem;
+        white-space: nowrap;
     }
 
-    .page-heading h1 {
-        font-size: 2.5rem;
+
+    /* ==============================
+       MAIN
+    ============================== */
+
+    main {
+        padding: 2rem;
     }
 
-    .directory-grid {
+
+    /* ==============================
+       EVENTS
+    ============================== */
+
+    .events-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
     }
 
-    .footer-container {
+
+    /* ==============================
+       WEATHER
+    ============================== */
+
+    .weather-container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* ==============================
+       SPOTLIGHTS
+    ============================== */
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero-content {
+        left: 2rem;
+        right: auto;
+        bottom: 2rem;
+        max-width: 500px;
+        padding: 1.5rem;
+    }
+
+
+    /* ==============================
+       DISCOVER
+    ============================== */
+
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ==============================
+       DIRECTORY
+    ============================== */
+
+    #directory.directory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ==============================
+       JOIN
+    ============================== */
+
+    .join-content {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: start;
+    }
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        padding: 2rem;
     }
 
+    .footer-contact,
+    .footer-social,
+    .footer-development,
     .footer-section {
         margin-bottom: 0;
     }
+}
 
-    /*
-       List view on larger screens.
-       The cards become horizontal rows and images
-       remain hidden as required by the project.
-    */
 
-    .directory-list .member-card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        align-items: center;
-        column-gap: 2rem;
-        padding: 1rem 1.5rem;
+/* ==================================
+   DESKTOP
+================================== */
+
+@media screen and (min-width: 900px) {
+
+    .site-header,
+    .header-container {
+        padding: 1rem 3rem;
     }
 
-    .directory-list .member-card img {
-        display: none;
+    #navigation a,
+    #main-nav a {
+        padding: 0.75rem 1rem;
+    }
+
+    main {
+        padding: 2rem 3rem;
+    }
+
+
+    /* HERO */
+
+    .hero img {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        max-width: 550px;
+    }
+
+
+    /* DISCOVER */
+
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .discover-card:hover {
+        transform: translateY(-4px);
+        transition: transform 0.2s ease;
+    }
+
+
+    /* DIRECTORY */
+
+    #directory.directory-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* JOIN */
+
+    .join-content {
+        gap: 3rem;
+    }
+
+        /* ================================
+    THANK YOU PAGE - LARGE SCREEN
+    ================================ */
+
+    .thank-you {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 2rem;
+    }
+
+    .thank-you h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #application-details {
+        max-width: 750px;
+        margin: 0 auto 2rem;
+        padding: 2rem;
+        background-color: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    #application-details h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+    }
+
+    #application-details p {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+    }
+
+    .thank-you .cta-button {
+        display: block;
+        width: fit-content;
+        margin: 2rem auto 0;
     }
 }
+

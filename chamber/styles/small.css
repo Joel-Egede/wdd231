@@ -1,43 +1,84 @@
-
-/* =========================================================
-   Small Screen Styles
-   Lagos Chamber of Commerce
-   WDD 231
-   ========================================================= */
-
 :root {
-    --primary-color: #003366;
-    --accent-color: #d4a017;
-    --background-color: #f5f7fa;
-    --text-color: #1f2933;
+    --primary: #003366;
+    --gold: #D4A017;
+    --background: #F5F7FA;
+    --text: #1F2933;
     --white: #ffffff;
-    --border-color: #d9dee5;
+    --border: #d9d9d9;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    margin: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
 header {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: var(--white);
 }
 
-.site-header {
+.site-header,
+.header-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+/* ==============================
+   LOGO
+============================== */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    color: var(--white);
     text-decoration: none;
-    font-size: 1.15rem;
     font-weight: 700;
 }
 
@@ -45,195 +86,606 @@ header {
     width: 55px;
     height: 55px;
     object-fit: contain;
-    background-color: #f5f7fa;
-    border-radius: 50px;
 }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-container img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.site-name,
+.logo-container span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   MENU BUTTON
+============================== */
 
 #menu-button {
-    display: block;
-    margin: 1rem 0 0 auto;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--white);
-    border-radius: 4px;
-    background-color: transparent;
+    margin-left: auto;
+    background: none;
+    border: none;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
 }
 
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+/* Hidden on mobile */
+
+#navigation,
 #main-nav {
     display: none;
-    flex-direction: column;
-    margin-top: 1rem;
+    width: 100%;
 }
 
+/* JavaScript opens navigation */
+
+#navigation.open,
 #main-nav.open {
-    display: flex;
+    display: block;
 }
 
+/* Home navigation uses UL */
+
+#navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* All navigation links */
+
+#navigation a,
 #main-nav a {
-    padding: 0.75rem;
+    display: block;
+    color: var(--white);
     text-decoration: none;
+    font-weight: 700;
     text-align: center;
+    padding: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+#navigation a:hover,
+#navigation a.active,
 #main-nav a:hover,
 #main-nav a.active {
-    background-color: var(--accent-color);
-    color: #000;
+    background-color: var(--gold);
+    color: var(--text);
 }
+
+
+/* ==============================
+   MAIN
+============================== */
 
 main {
-    width: min(94%, 1200px);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem;
 }
 
+main > h1 {
+    color: var(--primary);
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+
+/* ==============================
+   PAGE HEADING
+============================== */
+
 .page-heading {
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .page-heading h1 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-size: 2rem;
+    color: var(--primary);
 }
 
 .page-heading p {
-    max-width: 700px;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+
+/* ==============================
+   HOME HERO
+============================== */
+
+.hero {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    min-height: 280px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 51, 102, 0.92);
+    color: var(--white);
+}
+
+.hero-content h2 {
+    margin-top: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--gold);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background-color: var(--white);
+}
+
+
+/* ==============================
+   HOME SECTIONS
+============================== */
+
+.home-section {
+    margin-bottom: 2.5rem;
+}
+
+.home-section > h2 {
+    color: var(--primary);
+}
+
+
+/* ==============================
+   EVENTS
+============================== */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.event-card {
+    padding: 1.25rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.event-card h3 {
+    color: var(--primary);
+}
+
+.event-date {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+
+/* ==============================
+   WEATHER
+============================== */
+
+.weather-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.current-weather,
+.forecast-container {
+    padding: 1.25rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.temperature {
+    margin: 0.5rem 0;
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.forecast-card {
+    padding: 1rem;
+    background-color: var(--background);
+    border-radius: 6px;
+}
+
+.forecast-card h4 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.forecast-temperature {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   BUSINESS SPOTLIGHTS
+============================== */
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.spotlight-card {
+    padding: 1.25rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.spotlight-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.spotlight-card h3 {
+    color: var(--primary);
+}
+
+.membership-level,
+.member-level {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--gold);
+    color: var(--text);
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   DISCOVER
+============================== */
+
+.discover-intro {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.discover-intro h2 {
+    color: var(--primary);
+}
+
+#visitor-message {
+    font-weight: 700;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.discover-card {
+    overflow: hidden;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.discover-card figure {
+    margin: 0;
+}
+
+.discover-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.discover-card-content {
+    padding: 1rem;
+}
+
+.discover-card h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.discover-card button {
+    padding: 0.7rem 1rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   DIRECTORY
+============================== */
 
 .directory-controls {
     display: flex;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
 .directory-controls button {
-    min-width: 90px;
-    padding: 0.65rem 1rem;
-    border: 2px solid var(--primary-color);
-    border-radius: 5px;
-    background-color: var(--white);
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.directory-controls button:hover,
-.directory-controls button.active {
-    background-color: var(--primary-color);
+    padding: 0.7rem 1rem;
+    background-color: var(--primary);
     color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.directory-grid {
+.directory-controls button.active {
+    background-color: var(--gold);
+    color: var(--text);
+}
+
+#directory.directory-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
 .member-card {
-    padding: 1rem;
+    padding: 1.25rem;
     background-color: var(--white);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 
 .member-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 5px;
+    max-width: 180px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .member-card h2 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.25rem;
-}
-
-.member-card p {
-    margin-bottom: 0.35rem;
+    color: var(--primary);
 }
 
 .member-card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--primary-color);
     font-weight: 700;
 }
 
-.member-level {
-    display: inline-block;
-    margin-top: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    background-color: var(--accent-color);
-    color: #000;
-    font-size: 0.85rem;
+#directory.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#directory.directory-list .member-card {
+    border-radius: 0;
+    text-align: left;
+}
+
+#directory.directory-list .member-card img {
+    display: none;
+}
+
+
+/* ==============================
+   JOIN
+============================== */
+
+.join-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.membership-form-container,
+.membership-levels {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.membership-form-container h2,
+.membership-levels h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
     font-weight: 700;
 }
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--gold);
+}
+
+fieldset {
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+fieldset legend {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+fieldset label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+fieldset input[type="radio"] {
+    width: auto;
+}
+
+.form-button {
+    padding: 0.85rem;
+    background-color: var(--gold);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   MEMBERSHIP CARDS
+============================== */
+
+.membership-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.membership-card {
+    padding: 1rem;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    border-radius: 6px;
+}
+
+.membership-card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.membership-card button {
+    padding: 0.6rem 0.9rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   THANK YOU
+============================== */
+
+.thank-you {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.thank-you h1 {
+    color: var(--primary);
+}
+
+#application-details {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--background);
+    border-left: 5px solid var(--gold);
+    border-radius: 6px;
+    text-align: left;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
 
 footer {
-    margin-top: 3rem;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 2rem 1rem;
+}
+
+footer h2 {
+    color: var(--gold);
+}
+
+footer a {
+    display: block;
+    margin-bottom: 0.5rem;
     color: var(--white);
 }
 
 .footer-container {
-    width: min(94%, 1200px);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
 }
 
+.footer-contact,
+.footer-social,
+.footer-development,
 .footer-section {
     margin-bottom: 1.5rem;
-}
-
-.footer-section h2 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.footer-section p,
-.footer-section a {
-    margin-bottom: 0.25rem;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-}
-
-.social-links a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-}
-
-/* List View */
-
-.directory-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.directory-list .member-card {
-    display: block;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.directory-list .member-card img {
-    display: none;
-}
-
-.directory-list .member-card h2 {
-    margin-bottom: 0.25rem;
 }
