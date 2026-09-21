@@ -89,13 +89,9 @@ body {
     display: block;
 }
 
-.header-content {
-    flex-wrap: wrap;
-}
-
 .primary-nav ul {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     width: 100%;
 }
 
@@ -130,7 +126,6 @@ body {
 main {
     min-height: 60vh;
 }
-
 
 h1 {
     font-size: 2rem;
@@ -287,8 +282,9 @@ h3 {
 }
 
 .weather-current img {
-    width: 100%;
-    height: auto;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
 .temperature {
@@ -360,6 +356,7 @@ h3 {
 .discover-card img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
 }
 
