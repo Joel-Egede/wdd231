@@ -18,48 +18,20 @@ if (menuButton && primaryNav) {
 
 
 /* =========================
-   FOOTER
-========================= */
-
-const currentYear = document.querySelector("#currentyear");
-
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
-
-const lastModified = document.querySelector("#lastModified");
-
-if (lastModified) {
-    const modifiedDate = new Date(document.lastModified);
-
-    lastModified.textContent = modifiedDate.toLocaleDateString(
-        "en-US",
-        {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-        }
-    );
-}
-
-
-/* =========================
    FORM DATA
 ========================= */
 
-const params =
-    new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 
 
 function displayValue(elementId, parameterName) {
+    const element = document.querySelector(`#${elementId}`);
 
-    const element =
-        document.querySelector(`#${elementId}`);
+    if (!element) {
+        return;
+    }
 
-    if (!element) return;
-
-    const value =
-        params.get(parameterName);
+    const value = params.get(parameterName);
 
     if (value) {
         element.textContent = value;
@@ -69,32 +41,10 @@ function displayValue(elementId, parameterName) {
 }
 
 
-displayValue(
-    "displayFirstName",
-    "firstName"
-);
-
-displayValue(
-    "displayLastName",
-    "lastName"
-);
-
-displayValue(
-    "displayEmail",
-    "email"
-);
-
-displayValue(
-    "displayPhone",
-    "phone"
-);
-
-displayValue(
-    "displayOrganization",
-    "organization"
-);
-
-displayValue(
-    "displayMembership",
-    "membership"
-);
+displayValue("displayFirstName", "firstName");
+displayValue("displayLastName", "lastName");
+displayValue("displayEmail", "email");
+displayValue("displayPhone", "phone");
+displayValue("displayOrganization", "organization");
+displayValue("displayMembership", "membership");
+displayValue("displayTimestamp", "timestamp");

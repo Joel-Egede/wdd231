@@ -18,41 +18,13 @@ if (menuButton && primaryNav) {
 
 
 /* =========================
-   FOOTER
-========================= */
-
-const currentYear = document.querySelector("#currentyear");
-
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
-
-const lastModified = document.querySelector("#lastModified");
-
-if (lastModified) {
-    const modifiedDate = new Date(document.lastModified);
-
-    lastModified.textContent = modifiedDate.toLocaleDateString(
-        "en-US",
-        {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-        }
-    );
-}
-
-
-/* =========================
    TIMESTAMP
 ========================= */
 
-const timestamp =
-    document.querySelector("#timestamp");
+const timestamp = document.querySelector("#timestamp");
 
 if (timestamp) {
-    timestamp.value =
-        new Date().toISOString();
+    timestamp.value = new Date().toISOString();
 }
 
 
@@ -60,21 +32,12 @@ if (timestamp) {
    MEMBERSHIP MODALS
 ========================= */
 
-const modalButtons =
-    document.querySelectorAll(
-        "[data-modal]"
-    );
-
+const modalButtons = document.querySelectorAll("[data-modal]");
 
 modalButtons.forEach(button => {
-
     button.addEventListener("click", () => {
-
-        const modalId =
-            button.getAttribute("data-modal");
-
-        const modal =
-            document.querySelector(`#${modalId}`);
+        const modalId = button.getAttribute("data-modal");
+        const modal = document.querySelector(`#${modalId}`);
 
         if (modal) {
             modal.showModal();
@@ -83,18 +46,15 @@ modalButtons.forEach(button => {
 });
 
 
-const closeButtons =
-    document.querySelectorAll(
-        ".close-modal"
-    );
+/* =========================
+   CLOSE MODALS
+========================= */
 
+const closeButtons = document.querySelectorAll(".close-modal");
 
 closeButtons.forEach(button => {
-
     button.addEventListener("click", () => {
-
-        const modal =
-            button.closest("dialog");
+        const modal = button.closest("dialog");
 
         if (modal) {
             modal.close();
@@ -103,26 +63,22 @@ closeButtons.forEach(button => {
 });
 
 
-document
-    .querySelectorAll("dialog")
-    .forEach(dialog => {
+/* =========================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================= */
 
-        dialog.addEventListener(
-            "click",
-            event => {
+document.querySelectorAll("dialog").forEach(dialog => {
+    dialog.addEventListener("click", event => {
+        const rectangle = dialog.getBoundingClientRect();
 
-                const rectangle =
-                    dialog.getBoundingClientRect();
+        const clickedInside =
+            event.clientX >= rectangle.left &&
+            event.clientX <= rectangle.right &&
+            event.clientY >= rectangle.top &&
+            event.clientY <= rectangle.bottom;
 
-                const clickedInside =
-                    event.clientX >= rectangle.left &&
-                    event.clientX <= rectangle.right &&
-                    event.clientY >= rectangle.top &&
-                    event.clientY <= rectangle.bottom;
-
-                if (!clickedInside) {
-                    dialog.close();
-                }
-            }
-        );
+        if (!clickedInside) {
+            dialog.close();
+        }
     });
+});

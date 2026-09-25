@@ -498,6 +498,23 @@ h3 {
     display: block;
 }
 
+/* MEMBERSHIP CARD ANIMATION */
+@keyframes membershipCardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-card {
+    animation: membershipCardEntrance 0.6s ease-out;
+}
+
 /* =========================
    JOIN
 ========================= */
