@@ -511,10 +511,6 @@ h3 {
     }
 }
 
-.membership-card {
-    animation: membershipCardEntrance 0.6s ease-out;
-}
-
 /* =========================
    JOIN
 ========================= */
@@ -579,6 +575,7 @@ h3 {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 6px;
+    animation: membershipCardEntrance 0.6s ease-out;
 }
 
 .membership-card h3 {
