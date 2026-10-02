@@ -1,0 +1,287 @@
+/* ================================
+   Maintenance Hub Site Plan
+   WDD 231
+   ================================ */
+
+
+/* ---------- COLOR VARIABLES ---------- */
+
+:root {
+    --navy: #12304A;
+    --orange: #F28C28;
+    --light-gray: #F4F6F8;
+    --dark-gray: #1F2933;
+    --white: #FFFFFF;
+}
+
+
+/* ---------- GENERAL RESET ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+
+/* ---------- GENERAL CONTAINER ---------- */
+
+.container {
+    width: 92%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 2rem 0;
+    border-bottom: 6px solid var(--orange);
+}
+
+.course-label {
+    margin: 0 0 0.5rem;
+    color: var(--orange);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+
+main {
+    padding: 2rem 0;
+}
+
+
+/* ---------- SECTIONS ---------- */
+
+.plan-section {
+    background-color: var(--white);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-left: 6px solid var(--navy);
+    border-radius: 6px;
+}
+
+.plan-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--navy);
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 0.5rem;
+}
+
+.plan-section h3 {
+    color: var(--navy);
+    margin-top: 1.25rem;
+}
+
+.plan-section p {
+    margin-bottom: 1rem;
+}
+
+
+/* ---------- LISTS ---------- */
+
+.plan-section ul,
+.plan-section ol {
+    padding-left: 1.5rem;
+}
+
+.plan-section li {
+    margin-bottom: 0.75rem;
+}
+
+
+/* ---------- COLOR SCHEME ---------- */
+
+.color-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.color-card {
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.color-swatch {
+    height: 70px;
+    border-bottom: 3px solid var(--navy);
+}
+
+.color-card h3 {
+    margin: 1rem 1rem 0.5rem;
+}
+
+.color-card p {
+    margin: 0 1rem 1rem;
+}
+
+
+/* Individual color swatches */
+
+.navy {
+    background-color: var(--navy);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.background {
+    background-color: var(--light-gray);
+}
+
+.text {
+    background-color: var(--dark-gray);
+}
+
+.white {
+    background-color: var(--white);
+}
+
+
+/* ---------- TYPOGRAPHY ---------- */
+
+.typography-example {
+    border: 2px solid var(--navy);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.typography-example h3 {
+    font-size: 2rem;
+    margin-top: 0;
+    color: var(--navy);
+}
+
+.font-demo {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1rem;
+    border-left: 6px solid var(--orange);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+/* ---------- WIREFRAME ---------- */
+
+.wireframe-box {
+    min-height: 220px;
+    margin: 1rem 0 2rem;
+    padding: 2rem;
+    border: 3px solid var(--navy);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wireframe-box p:first-child {
+    margin: 0 0 0.5rem;
+    color: var(--navy);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.wireframe-box p:last-child {
+    margin: 0;
+}
+
+
+/*wireframe images */
+
+.wireframe-box img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.5rem 0;
+    border-top: 6px solid var(--orange);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+}
+
+
+/* ---------- TABLET / DESKTOP ---------- */
+
+@media screen and (min-width: 600px) {
+
+    .site-header h1 {
+        font-size: 3rem;
+    }
+
+    .plan-section {
+        padding: 2rem;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ---------- LARGE DESKTOP ---------- */
+
+@media screen and (min-width: 900px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .plan-section {
+        padding: 2.25rem;
+    }
+
+}
