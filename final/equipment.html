@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore industrial equipment, common maintenance problems, equipment purposes, and preventive maintenance information."
+    >
+
+    <meta name="author" content="Iloabuchi Egede">
+
+    <meta property="og:title" content="Maintenance Hub | Equipment">
+    <meta
+        property="og:description"
+        content="Explore equipment maintenance information and troubleshooting resources."
+    >
+    <meta property="og:type" content="website">
+    <meta
+        property="og:image"
+        content="images/maintenance-hub.svg"
+    >
+
+    <title>Maintenance Hub | Equipment</title>
+
+    <link rel="icon" href="images/logo.svg">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script
+        src="scripts/equipment.js"
+        type="module"
+        defer
+    ></script>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-container">
+
+        <a class="brand" href="index.html">
+            <img
+                src="images/logo.svg"
+                alt="Maintenance Hub logo"
+                width="50"
+                height="50"
+            >
+            <span>Maintenance Hub</span>
+        </a>
+
+        <button
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+            ☰
+        </button>
+
+        <nav
+            class="primary-navigation"
+            id="primary-navigation"
+        >
+            <a href="index.html">Home</a>
+            <a class="active" href="equipment.html">Equipment</a>
+            <a href="safety.html">Safety</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <section class="page-banner">
+        <div class="container">
+
+            <p class="eyebrow">
+                Maintenance Resources
+            </p>
+
+            <h1>
+                Equipment
+            </h1>
+
+            <p>
+                Explore common industrial equipment and learn about
+                their purpose, common problems, and maintenance needs.
+            </p>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+
+            <div class="equipment-controls">
+
+                <div class="form-group">
+                    <label for="equipment-search">
+                        Search equipment
+                    </label>
+
+                    <input
+                        type="search"
+                        id="equipment-search"
+                        placeholder="Search by equipment name..."
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category-filter">
+                        Filter by category
+                    </label>
+
+                    <select id="category-filter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="production">
+                            Production
+                        </option>
+
+                        <option value="material-handling">
+                            Material Handling
+                        </option>
+
+                        <option value="utilities">
+                            Utilities
+                        </option>
+
+                        <option value="packaging">
+                            Packaging
+                        </option>
+
+                        <option value="electrical">
+                            Electrical
+                        </option>
+
+                        <option value="mechanical">
+                            Mechanical
+                        </option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="saved-bar">
+
+                <p>
+                    Saved equipment:
+                    <strong id="saved-count">0</strong>
+                </p>
+
+                <button
+                    class="button button-small"
+                    id="show-saved"
+                    type="button"
+                >
+                    Show Saved
+                </button>
+
+            </div>
+
+
+            <div
+                class="equipment-grid"
+                id="equipment-list"
+            >
+                <p class="loading-message">
+                    Loading equipment information...
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MODAL -->
+    <dialog id="equipment-modal">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                id="modal-close"
+                type="button"
+                aria-label="Close equipment details"
+            >
+                ×
+            </button>
+
+            <div id="modal-body"></div>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- QUESTION CTA -->
+    <section class="question-section">
+        <div class="container question-content">
+
+            <h2>
+                Have a Maintenance Question?
+            </h2>
+
+            <p>
+                Ask your maintenance question through our form.
+            </p>
+
+            <a
+                class="button"
+                href="thankyou.html"
+            >
+                Ask a Question
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+    <div class="container">
+
+        <p class="footer-title">
+            Maintenance Hub
+        </p>
+
+        <div class="footer-links">
+
+            <a href="attributions.html">
+                Attribution
+            </a>
+
+            <span>|</span>
+
+            <a
+                href="https://www.loom.com/share/e3a10deb2b96487cba5f96bada17e637"
+                target="_blank"
+                rel="noopener"
+            >
+                Project Video
+            </a>
+
+            <span>|</span>
+
+            <span>
+                © <span id="current-year"></span>
+                Iloabuchi Egede
+            </span>
+
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

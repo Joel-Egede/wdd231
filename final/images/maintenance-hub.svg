@@ -1,0 +1,91 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 600 400"
+    role="img"
+    aria-labelledby="title description"
+>
+
+    <title id="title">
+        Maintenance Hub illustration
+    </title>
+
+    <desc id="description">
+        An illustration representing industrial equipment maintenance.
+    </desc>
+
+    <rect
+        width="600"
+        height="400"
+        fill="#12304A"
+    />
+
+    <rect
+        x="80"
+        y="130"
+        width="440"
+        height="180"
+        rx="12"
+        fill="#FFFFFF"
+    />
+
+    <rect
+        x="120"
+        y="175"
+        width="150"
+        height="90"
+        fill="#F4F6F8"
+        stroke="#12304A"
+        stroke-width="8"
+    />
+
+    <circle
+        cx="195"
+        cy="220"
+        r="32"
+        fill="#F28C28"
+    />
+
+    <circle
+        cx="195"
+        cy="220"
+        r="12"
+        fill="#12304A"
+    />
+
+    <rect
+        x="320"
+        y="175"
+        width="150"
+        height="25"
+        rx="5"
+        fill="#12304A"
+    />
+
+    <rect
+        x="320"
+        y="220"
+        width="110"
+        height="25"
+        rx="5"
+        fill="#F28C28"
+    />
+
+    <rect
+        x="320"
+        y="265"
+        width="135"
+        height="15"
+        rx="5"
+        fill="#12304A"
+    />
+
+    <path
+        d="M150 110 L195 70 L240 110"
+        fill="none"
+        stroke="#F28C28"
+        stroke-width="12"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+</svg>

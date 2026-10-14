@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Conveyor System",
+        "category": "material-handling",
+        "purpose": "Moves products and materials between different stages of a production process.",
+        "commonProblem": "Belt misalignment, excessive wear, unusual noise, or motor problems.",
+        "maintenance": "Inspect belt alignment, rollers, bearings, guards, and drive components."
+    },
+    {
+        "id": 2,
+        "name": "Centrifugal Pump",
+        "category": "utilities",
+        "purpose": "Moves liquids through pipes and process systems.",
+        "commonProblem": "Low flow, leakage, vibration, cavitation, or unusual noise.",
+        "maintenance": "Inspect seals, bearings, coupling, lubrication, and pump alignment."
+    },
+    {
+        "id": 3,
+        "name": "Air Compressor",
+        "category": "utilities",
+        "purpose": "Provides compressed air for pneumatic equipment and production processes.",
+        "commonProblem": "Low pressure, overheating, air leaks, or excessive noise.",
+        "maintenance": "Check filters, oil level, cooling system, hoses, and air leaks."
+    },
+    {
+        "id": 4,
+        "name": "Electric Motor",
+        "category": "electrical",
+        "purpose": "Converts electrical energy into mechanical motion.",
+        "commonProblem": "Overheating, vibration, unusual noise, or failure to start.",
+        "maintenance": "Inspect connections, bearings, cooling, alignment, and operating temperature."
+    },
+    {
+        "id": 5,
+        "name": "Packaging Machine",
+        "category": "packaging",
+        "purpose": "Packages products using automated filling, sealing, wrapping, or labeling processes.",
+        "commonProblem": "Poor sealing, incorrect positioning, film problems, or sensor faults.",
+        "maintenance": "Inspect sensors, sealing components, belts, film paths, and moving parts."
+    },
+    {
+        "id": 6,
+        "name": "Industrial Mixer",
+        "category": "production",
+        "purpose": "Mixes ingredients or materials to produce a consistent product.",
+        "commonProblem": "Uneven mixing, unusual vibration, motor overload, or blade wear.",
+        "maintenance": "Inspect blades, bearings, motor, shaft, seals, and mixer guards."
+    },
+    {
+        "id": 7,
+        "name": "Gearbox",
+        "category": "mechanical",
+        "purpose": "Transfers mechanical power while changing speed and torque.",
+        "commonProblem": "Noise, overheating, vibration, oil leakage, or gear wear.",
+        "maintenance": "Check oil level, seals, gears, bearings, alignment, and mounting."
+    },
+    {
+        "id": 8,
+        "name": "Control Panel",
+        "category": "electrical",
+        "purpose": "Controls electrical and automated functions of industrial equipment.",
+        "commonProblem": "Tripped breakers, loose connections, alarms, or control failures.",
+        "maintenance": "Inspect connections, components, ventilation, indicators, and control wiring."
+    },
+    {
+        "id": 9,
+        "name": "Industrial Fan",
+        "category": "utilities",
+        "purpose": "Moves air for ventilation, cooling, or industrial process requirements.",
+        "commonProblem": "Vibration, unusual noise, low airflow, or motor overheating.",
+        "maintenance": "Inspect blades, bearings, motor, guards, mounting, and airflow."
+    },
+    {
+        "id": 10,
+        "name": "Filling Machine",
+        "category": "packaging",
+        "purpose": "Fills containers with a controlled amount of liquid or product.",
+        "commonProblem": "Incorrect fill volume, leakage, blocked nozzles, or sensor problems.",
+        "maintenance": "Inspect nozzles, sensors, valves, seals, product lines, and controls."
+    },
+    {
+        "id": 11,
+        "name": "Boiler",
+        "category": "utilities",
+        "purpose": "Generates steam or hot water for industrial processes.",
+        "commonProblem": "Low pressure, leaks, overheating, poor combustion, or scale buildup.",
+        "maintenance": "Follow approved boiler procedures and inspect controls, water systems, and safety devices."
+    },
+    {
+        "id": 12,
+        "name": "Hydraulic Press",
+        "category": "production",
+        "purpose": "Uses hydraulic pressure to apply force during manufacturing operations.",
+        "commonProblem": "Low pressure, hydraulic leaks, slow operation, or cylinder problems.",
+        "maintenance": "Inspect hydraulic fluid, hoses, seals, cylinders, filters, and pressure systems."
+    },
+    {
+        "id": 13,
+        "name": "PLC System",
+        "category": "electrical",
+        "purpose": "Controls automated industrial processes using programmed logic.",
+        "commonProblem": "Communication errors, input/output faults, alarms, or program-related problems.",
+        "maintenance": "Inspect connections, cooling, indicators, backups, and fault messages."
+    },
+    {
+        "id": 14,
+        "name": "Vacuum Pump",
+        "category": "utilities",
+        "purpose": "Creates a vacuum for industrial processing and packaging applications.",
+        "commonProblem": "Poor vacuum, oil problems, leakage, overheating, or unusual noise.",
+        "maintenance": "Check oil, filters, seals, hoses, cooling, and operating condition."
+    },
+    {
+        "id": 15,
+        "name": "Industrial Dryer",
+        "category": "production",
+        "purpose": "Removes moisture from materials or products during industrial processing.",
+        "commonProblem": "Poor drying, overheating, airflow problems, or temperature control faults.",
+        "maintenance": "Inspect heating components, airflow, filters, fans, sensors, and controls."
+    }
+]

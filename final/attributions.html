@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Maintenance Hub attribution and resource information."
+    >
+
+    <meta name="author" content="Iloabuchi Egede">
+
+    <title>Maintenance Hub | Attributions</title>
+
+    <link
+        rel="icon"
+        href="images/logo.svg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="styles/main.css"
+    >
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="container header-container">
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+
+            <img
+                src="images/logo.svg"
+                alt="Maintenance Hub logo"
+                width="50"
+                height="50"
+            >
+
+            <span>
+                Maintenance Hub
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="page-banner">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                Project Information
+            </p>
+
+            <h1>
+                Attributions
+            </h1>
+
+            <p>
+                Sources and resources used in the development
+                of Maintenance Hub.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container attribution-content">
+
+            <h2>
+                Typography
+            </h2>
+
+            <p>
+                The website uses the Roboto typeface provided
+                through Google Fonts.
+            </p>
+
+
+            <h2>
+                Project Content
+            </h2>
+
+            <p>
+                Maintenance information was written for educational
+                purposes and organized around common maintenance,
+                troubleshooting, equipment, and safety concepts.
+            </p>
+
+
+            <h2>
+                Graphics
+            </h2>
+
+            <p>
+                The Maintenance Hub logo and project illustrations
+                are original project graphics.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p class="footer-title">
+            Maintenance Hub
+        </p>
+
+        <div class="footer-links">
+
+            <a href="attributions.html">
+                Attribution
+            </a>
+
+            <span>|</span>
+
+            <a
+                href="https://www.loom.com/share/e3a10deb2b96487cba5f96bada17e637"
+                target="_blank"
+                rel="noopener"
+            >
+                Project Video
+            </a>
+
+            <span>|</span>
+
+            <span>
+                © <span id="current-year"></span>
+                Iloabuchi Egede
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script type="module">
+
+    const year = document.querySelector(
+        "#current-year"
+    );
+
+    if (year) {
+        year.textContent =
+            new Date().getFullYear();
+    }
+
+</script>
+
+</body>
+</html>
